@@ -1,4 +1,20 @@
 $(function() {
+	$('.header__logo').on('click', function(event) {
+		event.preventDefault();
+		$('html, body').animate({
+			scrollTop: 0
+		}, 700);
+	});
+
+	let navigation = $("#navigation"); 
+	$(document).mouseup(function(event) { 
+		if (!navigation.is(event.target) && navigation.has(event.target).length === 0 && !$('.header__burger-menu').is(event.target)) {
+			navigation.removeClass('active');
+			$('.header__burger-menu').removeClass('active'); 
+		};
+	});
+
+
 	let header = $('#header');
 	$(window).on('scroll reload resize', function() {
 		if($(window).scrollTop() > 0) {
@@ -9,8 +25,7 @@ $(function() {
 	});
 
 	let burgerMenu = $('#burger-menu');
-	let navigation = $('#navigation');
-
+	
 	$(burgerMenu).on('click', function() {
 		burgerMenu.toggleClass('active');
 		navigation.toggleClass('active')
@@ -35,9 +50,13 @@ $(function() {
 		let blockSelector = $(this).data('scroll');
 		let blockOffset = $(blockSelector).offset().top;
 
+		navigation.removeClass('active');
+		$('.header__burger-menu').removeClass('active');
+			
 		$('html, body').animate({
 			scrollTop: blockOffset - headerHeight,
 		}, 700);
+
 	});
 
 	$('.service__choose').slick({
