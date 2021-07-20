@@ -831,9 +831,24 @@ img[alt="hotdog_rotate"] {
 	text-transform: uppercase;
 }
 
+.footer__social {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .footer__social a {
 	margin-right: 10px;
+	width: 20%;
 }
+
+.footer__social a img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+
 
 /* ===== ADAPTIVE ===== */
 @media(max-width: 1200px) {
