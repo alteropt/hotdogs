@@ -484,6 +484,10 @@ img[alt="hotdog_rotate"] {
 	padding-left: 57px;
 }
 
+.images__text:hover .images__try {
+	font-size: 1.1em;
+}
+
 .images__try {
 	font-size: 25px;
 	line-height: 1.5;
